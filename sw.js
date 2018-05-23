@@ -1,4 +1,4 @@
-var CACHE_NAME = 'my-site-cache-v1';
+var cache_name = 'my-site-cache-v1';
 var urlsToCache = [
   '/',
   './css/freelancer.min.css',
@@ -10,7 +10,7 @@ var urlsToCache = [
 self.addEventListener('install', function(event) {
   // Perform install steps
   event.waitUntil(
-    caches.open(CACHE_NAME)
+    caches.open(cache_name)
       .then(function(cache) {
         console.log('Opened cache');
         return cache.addAll(urlsToCache);
@@ -46,7 +46,7 @@ self.addEventListener('fetch', function(event) {
             // to clone it so we have two streams.
             var responseToCache = response.clone();
 
-            caches.open(CACHE_NAME)
+            caches.open(cache_name)
               .then(function(cache) {
                 cache.put(event.request, responseToCache);
               });
