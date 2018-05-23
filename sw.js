@@ -1,4 +1,4 @@
-var cache_name = 'pwa_v1';
+var cache_name = 'pwa';
 var urlsToCache = [
   '/',
   './css/freelancer.min.css',
